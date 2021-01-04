@@ -1,0 +1,62 @@
+
+export default{
+products:[
+    {
+        "id":1,
+        "name":"Pants",
+        "price":95,
+        "image":"/images/img.png",
+        "rating":3.2,
+        "numreviews":10
+    },
+    {
+        "id":2,
+        "name":"Pants",
+        "price":90,
+        "image":"/images/img.png",
+        "rating":3.5,
+        "numreviews":5
+    },
+    {
+        "id":3,
+        "name":"Pants",
+        "price":99,
+        "image":"/images/img.png",
+        "rating":3.0,
+        "numreviews":10
+    },
+    {
+        "id":4,
+        "name":"Pants",
+        "price":100,
+        "image":"/images/img.png",
+        "rating":4.0,
+        "numreviews":10
+    },
+    {
+        "id":1,
+        "name":"Pants",
+        "price":95,
+        "image":"/images/img.png",
+        "rating":3.2,
+        "numreviews":10
+    },
+    {
+        "id":5,
+        "name":"Pants",
+        "price":95,
+        "image":"/images/img.png",
+        "rating":3.2,
+        "numreviews":10
+    },
+    {
+        "id":6,
+        "name":"Pants",
+        "price":95,
+        "image":"/images/img.png",
+        "rating":3.2,
+        "numreviews":10
+    },
+
+]
+}
