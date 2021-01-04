@@ -138,3 +138,108 @@ body{
   height: 25rem;
   width: 20rem;
 }
+
+
+.signin_container
+{
+  width: 30rem;
+  height: 35rem;
+  display: block;
+  margin: auto;
+  background-color: #0074e1;
+  text-align: center;
+  border-radius: 2rem;
+  padding: 2rem;
+  margin-top: 6rem;;
+}
+
+.signup_container
+{
+  width: 30rem;
+  height: 45rem;
+  display: block;
+  margin: auto;
+  background-color: #0074e1;
+  text-align: center;
+  border-radius: 2rem;
+  padding: 2rem;
+  margin-top: 6rem;;
+}
+
+.signintitle
+{
+  font-size: 3rem;
+  color: white;
+  font-style: italic;
+}
+
+.username
+{
+  height: 2rem;
+  margin-top: 3rem;
+  border-radius: 2rem;
+  padding: 1rem;
+  outline: none;
+  font-size: medium ;
+}
+
+.name
+{
+  height: 2rem;
+  margin-top: 7rem;
+  border-radius: 2rem;
+  padding: 1rem;
+  outline: none;
+  font-size: medium ;
+}
+
+.password
+{
+  height: 2rem;
+  margin-top: 3rem;
+  border-radius: 2rem;
+  padding: 1rem;
+  outline: none;
+  font-size: medium;
+}
+
+.signin_button
+{
+  display: flex;
+  text-align: center;
+  margin: auto;
+  margin-top: 5rem;
+  border-radius: 2rem;
+  padding-left: 1.3rem;
+  padding-right: 1.3rem;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  outline: none;
+  border-width: 0;
+  cursor: pointer;
+}
+
+.signin_button:hover
+{
+  color: white;
+  background-color: #F79E02;
+  transition: 0.5s;
+}
+
+.signuplink
+{
+  display: flex;
+  margin: auto;
+  text-decoration: none;
+  margin-top: 2rem;
+  color: white;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.signuplink:hover
+{
+  color: #F79E02;
+  transition: 0.5s;
+  font-size: 1.6rem;
+}

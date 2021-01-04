@@ -3,6 +3,8 @@ import {Link, Route} from 'react-router-dom';
 import './App.css';
 import homescreen from './screens/HomeScreen';
 import HomeScreen from './screens/HomeScreen';
+import SignInScreen from './screens/SignInScreen';
+import SignUpScreen from './screens/SignUpScreen';
 
 function App() 
 {
@@ -27,9 +29,9 @@ function App()
       <a href='#' className='cart'>
         Cart
       </a>
-      <a href='#' className='signin'>
+      <Link to="/signin" className='signin'>
         SignIn
-      </a>
+      </Link>
     </header>
     <div className='sidebar'>
       <button className='sidebar-close-button' onClick={closesidebar}>
@@ -40,6 +42,10 @@ function App()
 
     <main className='main'>
     <Route path="/" exact={true} component={HomeScreen} />
+    <Route path="/signin" component={SignInScreen} />
+    <Route path="/signup" component={SignUpScreen} />
+
+
     </main>
 
     <footer className='footer'>
