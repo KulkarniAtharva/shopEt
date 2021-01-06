@@ -1,6 +1,7 @@
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import "./App.css";
 import HomeScreen from "./screens/HomeScreen";
+import ProductScreeen from "./screens/ProductScreen";
 import SignInScreen from "./screens/SignInScreen";
 import SignUpScreen from "./screens/SignUpScreen";
 
@@ -38,6 +39,7 @@ function App() {
         <Route path="/" exact={true} component={HomeScreen} />
         <Route path="/signin" component={SignInScreen} />
         <Route path="/signup" component={SignUpScreen} />
+        <Route path="/product/:id" component={ProductScreeen} />
       </main>
 
       <footer className="footer">All Rights Reserved.</footer>

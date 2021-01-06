@@ -248,3 +248,71 @@ body{
 {
   list-style-type: none;
 }
+
+.product_details
+{
+  height: 100%;
+  padding: 50px;
+  display: inline;
+}
+
+.product_img
+{
+  width :45rem;
+  height: 50rem;
+  float: left;
+  margin-left: 7rem;
+}
+
+.title
+{
+  font-size: xx-large;
+}
+
+.subtitle
+{
+  font-size: large;
+}
+
+.detail
+{
+  float: right;
+  margin-left: 15rem;
+  padding: 0.8rem;
+}
+
+.price
+{
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+
+.rating
+{
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.numreviews
+{
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.counter
+{
+  font-size: 2rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  margin-top: 2rem;
+}
+
+.addtocart
+{
+  padding: 1rem 6rem 1rem 6rem;
+  border-radius: 0.4rem;
+  margin-top: 5rem;
+  cursor: pointer;
+  background-color: #F79E02;
+
+}

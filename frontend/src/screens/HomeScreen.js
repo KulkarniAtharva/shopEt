@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { productListReducer } from "../reducers/ProductReducer";
 import { listProducts } from "../actions/ProductActions";
+import {Link} from 'react-router-dom'
 
 function HomeScreen() {
   //const [products,setProducts] = useState([]);
@@ -27,9 +28,9 @@ function HomeScreen() {
         <li key={product._id} className="li_list">
           <div className="product">
             <div className="product-img">
-              <img src={product.image} alt="a" className="img"></img>
+              <Link to={"/product/"+product._id}><img src={product.image} alt="a" className="img"></img></Link>
             </div>
-            <div className="product-title">{product.name}</div>
+            <Link to={"/product/"+product._id}><div className="product-title">{product.name}</div></Link>
             <div className="product-price">₹{product.price}</div>
             <div className="product-rating">{product.rating} Stars</div>
             <div className="num-reviews">{product.numreviews} Reviews</div>
