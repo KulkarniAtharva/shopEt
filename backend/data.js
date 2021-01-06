@@ -1,60 +1,67 @@
 export default{
 products:[
     {
-        "_id":1,
+        "_id":"1",
         "name":"Pants",
-        "price":95,
+        "price":"95",
         "image":"/images/img.png",
-        "rating":3.2,
-        "numreviews":10
+        "rating":"3.2",
+        "numreviews":"10",
+        "countInStock":5
     },
     {
-        "_id":2,
+        "_id":"2",
         "name":"Pants",
-        "price":90,
+        "price":"90",
         "image":"/images/img.png",
-        "rating":3.5,
-        "numreviews":5
+        "rating":"3.5",
+        "numreviews":"5",
+        "countInStock":9
     },
     {
-        "_id":3,
+        "_id":"3",
         "name":"Pants",
-        "price":99,
+        "price":"99",
         "image":"/images/img.png",
-        "rating":3.0,
-        "numreviews":10
+        "rating":"3.0",
+        "numreviews":"10",
+        "countInStock":10
     },
     {
-        "_id":4,
+        "_id":"4",
         "name":"Pants",
-        "price":100,
+        "price":"100",
         "image":"/images/img.png",
-        "rating":4.0,
-        "numreviews":10
+        "rating":"4.0",
+        "numreviews":"10",
+        "countInStock":15
     },
     {
-        "_id":5,
+        "_id":"5",
         "name":"Pants",
-        "price":95,
+        "price":"95",
         "image":"/images/img.png",
-        "rating":3.2,
-        "numreviews":10
+        "rating":"3.2",
+        "numreviews":"10",
+        "countInStock":2
     },
     {
-        "_id":6,
+        "_id":"6",
         "name":"Pants",
-        "price":95,
+        "price":"95",
         "image":"/images/img.png",
-        "rating":3.2,
-        "numreviews":10
+        "rating":"3.2",
+        "numreviews":"10",
+        "countInStock":3
     },
     {
-        "_id":7,
+        "_id":"7",
         "name":"Pants",
-        "price":95,
+        "price":"95",
         "image":"/images/img.png",
-        "rating":3.2,
-        "numreviews":10
+        "rating":"3.2",
+        "numreviews":"10",
+        "countInStock":6
     },
 
 ]

@@ -39,7 +39,7 @@ function App() {
         <Route path="/" exact={true} component={HomeScreen} />
         <Route path="/signin" component={SignInScreen} />
         <Route path="/signup" component={SignUpScreen} />
-        <Route path="/product/:id" component={ProductScreeen} />
+        <Route path="/products/:id" component={ProductScreeen} />
       </main>
 
       <footer className="footer">All Rights Reserved.</footer>

@@ -28,9 +28,9 @@ function HomeScreen() {
         <li key={product._id} className="li_list">
           <div className="product">
             <div className="product-img">
-              <Link to={"/product/"+product._id}><img src={product.image} alt="a" className="img"></img></Link>
+              <Link to={"/products/"+ product._id}><img src={product.image} alt="a" className="img"></img></Link>
             </div>
-            <Link to={"/product/"+product._id}><div className="product-title">{product.name}</div></Link>
+            <Link to={"/products/"+ product._id} className="product-title">{product.name}</Link>
             <div className="product-price">₹{product.price}</div>
             <div className="product-rating">{product.rating} Stars</div>
             <div className="num-reviews">{product.numreviews} Reviews</div>
