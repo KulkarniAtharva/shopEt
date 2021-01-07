@@ -23,6 +23,11 @@ function ProductScreeen(props) {
     };
   }, []);
 
+  const AddToCartHandler = () =>
+  {
+      props.history.push("/cart/" + productId + "?qty=" + qty);
+  }
+
   return loading ? (
     <div>Loading..</div>
   ) : error ? (
@@ -54,8 +59,8 @@ function ProductScreeen(props) {
             </select>
           </div>
         </div>
-
-        <button className="addtocart">Add to Cart</button>
+        {product.countInStock>0 ? <button className="addtocart" onClick={AddToCartHandler}>Add to Cart</button>
+        :<div className='outofstock'>Out of Stock</div>}
       </span>
     </div>
   );

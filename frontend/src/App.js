@@ -1,5 +1,6 @@
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import "./App.css";
+import CartScreen from "./screens/CartScreen";
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreeen from "./screens/ProductScreen";
 import SignInScreen from "./screens/SignInScreen";
@@ -40,6 +41,7 @@ function App() {
         <Route path="/signin" component={SignInScreen} />
         <Route path="/signup" component={SignUpScreen} />
         <Route path="/products/:id" component={ProductScreeen} />
+        <Route path="/cart/:id?" component={CartScreen} />
       </main>
 
       <footer className="footer">All Rights Reserved.</footer>

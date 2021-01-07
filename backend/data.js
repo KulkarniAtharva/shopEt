@@ -7,7 +7,7 @@ products:[
         "image":"/images/img.png",
         "rating":"3.2",
         "numreviews":"10",
-        "countInStock":5
+        "countInStock":0
     },
     {
         "_id":"2",
