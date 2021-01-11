@@ -27,6 +27,11 @@ var qty1 =0;
     }
   }, []);
 
+  const checkoutHandler = () =>
+  {
+    props.history.push("/signin?redirect=shipping")
+  }
+
   return (
     <div className="cart-details">
         <div className="cart-label">Items in Cart</div>
@@ -64,9 +69,9 @@ var qty1 =0;
           </div>
         )}
      <div className="total">
-          <div className='total-text'>Subtotal ( {qty1} items) : $ {temp} </div>
+          <div className='total-text'>Subtotal ( {cartItems.reduce((a,c) => a+c.Quantity,0)} items) : $ {cartItems.reduce((a,c) => a+c.Quantity*c.price,0)} </div>
 
-          <button className="checkout_btn">Proceed to checkout</button>
+          <button className="checkout_btn" disabled={cartItems.length === 0} onClick={checkoutHandler}>Proceed to checkout</button>
      
      </div>
     </div>
