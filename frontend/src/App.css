@@ -394,6 +394,7 @@ body{
 {
   display:inline-flex;
   width: 100%;
+  flex-wrap: wrap;
 
 }
 .cart-items
@@ -405,10 +406,12 @@ body{
 }
 .cart-label
 {
+  display: inline-flex;
   font-size: large;
   text-decoration: underline;
   text-underline-offset: 1rem;
   margin-left: 5rem;
+  flex-wrap: wrap;
 }
 .cart-status
 {
@@ -435,16 +438,25 @@ body{
   display: block;
   margin-left: 2rem;
   text-align: center;
+  
 }
 .item-name
 {
+  display: flex;
+  flex-wrap: wrap;
   font-size: large;
+  justify-content: center;
+  align-items: center;
   
 }
 .item-price
 {
   margin-top: 0.4rem;
   font-size: small;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 .qty-container
 {
@@ -452,14 +464,25 @@ body{
   margin-top: 0.5rem;
   justify-content: center;
   align-items: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 .delete-cart
 {
   padding: 0.5rem;
   margin-top: 1.4rem;
   display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+  border-width: 0;
+  outline: none;
+}
+.delete-cart:hover
+{
+  transition: 0.4s;
   background-color: #C0392B;
   color: white;
+
 }
 
 .subtotal
@@ -468,6 +491,7 @@ body{
   margin-left: 20rem;
   align-items: center;
   font-size: 1.5rem;
+  flex-wrap: wrap;
 }
 
 
@@ -478,17 +502,17 @@ body{
 
 .total
 {
-  display: flexbox;
+  display: block;
   margin-left: auto;
   height: 10rem;
   width: 25rem;
   background-color: #E8E8E8;
   margin-right: 10rem;
-  align-items: center;
-  padding: 1.3rem;
   font-weight: bold;
   font-size: 1.7rem;
-  justify-content: center;
+  padding: 2rem;
+  
+
 }
 
 .temp
@@ -498,13 +522,18 @@ body{
 
 .checkout_btn
 {
-  margin-top: 2rem;
+
+  
   background-color: #F79E02;
   padding: 1rem;
-  border-width: none;
-  outline: none;
   border-radius: 0.5rem;
   display: flex;
-  
+  margin: auto;
+  margin-top: 1.5rem;
 
+}
+.total-text
+{
+  margin-top: 2rem;
+  text-align: center;
 }

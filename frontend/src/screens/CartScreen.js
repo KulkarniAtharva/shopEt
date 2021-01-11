@@ -64,7 +64,7 @@ var qty1 =0;
           </div>
         )}
      <div className="total">
-          <div>Subtotal ( {qty1} items) : $ {temp} </div>
+          <div className='total-text'>Subtotal ( {qty1} items) : $ {temp} </div>
 
           <button className="checkout_btn">Proceed to checkout</button>
      
