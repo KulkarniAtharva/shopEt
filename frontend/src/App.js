@@ -1,4 +1,5 @@
 import { BrowserRouter, Link, Route } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "./App.css";
 import CartScreen from "./screens/CartScreen";
 import HomeScreen from "./screens/HomeScreen";
@@ -7,6 +8,8 @@ import SignInScreen from "./screens/SignInScreen";
 import SignUpScreen from "./screens/SignUpScreen";
 
 function App() {
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
   const opensidebar = () => {
     document.querySelector(".sidebar").classList.add("open");
   };
@@ -26,9 +29,11 @@ function App() {
         <a href="#" className="cart">
           Cart
         </a>
-        <Link to="/signin" className="signin">
-          SignIn
-        </Link>
+        {userInfo ? (
+          <Link to="/profile" className='signin'>{userInfo.name}</Link>
+        ) : (
+          <Link to="/signin" className='signin'>Sign In</Link>
+        )}
       </header>
       <div className="sidebar">
         <button className="sidebar-close-button" onClick={closesidebar}>

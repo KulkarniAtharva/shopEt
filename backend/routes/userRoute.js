@@ -1,19 +1,28 @@
 import express from 'express';
 import User from '../models/userModels'
 import { getToken } from '../util';
+import bcrypt from 'bcrypt';
 
+const saltRounds = 10;
 
 const router = express.Router();
 
 
-router.get("/signin", async(req,res) =>{
+router.post('/signin', async( req, res)=> {
 
+   
+  const salt = await bcrypt.genSalt(saltRounds);
+  var hash = await bcrypt.hash(req.body.password,salt);
+
+   
+
+   bcrypt.compare()
     const signinUser = await User.findOne({
         email: req.body.email,
-        password: req.body.password
+        password: hash
     });
     if(signinUser)
-    {
+    { 
         res.send({
             _id: signinUser.id,
             name: signinUser.name,
@@ -21,30 +30,58 @@ router.get("/signin", async(req,res) =>{
             isAdmin: signinUser.isAdmin,
             token: getToken(signinUser)
         })
+
     }
-    else
-    {
-        res.status(401).send({msg:'Invalid Email or Password'})
+    else{
+        res.status(404).send({ msg:'Invalid email or password.'})
     }
 })
 
-router.get("/createadmin", async(req,res) => {
-    try
-    {
-        const user = new User({
-            name:'Adwait',
-            email:'adwaitgondhalekar@gmail.com',
-            password:'1234',
-            isAdmin:true
-        });
+router.post("/signup", async(req,res) => {
 
-        const newUser = await user.save();
-        res.send(user);
-    }
-    catch(error)
-    {
-        res.send({ msg: error.message});
-    }
+  //let encryptedpassword = '';
+
+  //encryptedpassword = bcrypt.hashSync(req.body.password,saltRounds);
+
+  const salt = await bcrypt.genSalt(saltRounds);
+  var hash = await bcrypt.hash(req.body.password,salt);
+
+
+  try{
+    const user = new User({
+      name:req.body.name,
+      email:req.body.email,
+      password:hash
+    });
+
+
+  
+    const signupUser = await user.save();
+    res.send(signupUser);
+  
+
+  }
+  catch(error)
+  {
+    res.send({msg:error.message});
+  }
+
+
 });
 
-export default router;
+router.get("/createadmin", async (req, res) => {
+    try {
+      const user = new User({
+        name: 'Adwait',
+        email: 'adwaitgondhalekar@gmail.com',
+        password: 'adwait',
+        isAdmin: true
+      });
+      const newUser = await user.save();
+      res.send(newUser);
+    } catch (error) {
+      res.send({ msg: error.message });
+    }
+  });
+  
+  export default router;

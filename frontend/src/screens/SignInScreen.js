@@ -33,11 +33,15 @@ function SignInScreen(props)
         dispatch(signin(email,password));
     }
     return(
-        <form onSubmit={submitHandler}>
+        <form onSubmit={submitHandler} className='signinform'>
         <div className="signin_container">
             <div className="signintitle"> SignIn</div>
-            <input type="text" className="username" placeholder="Username"></input>
-            <input type="password" className="password" placeholder="Password"></input>
+            <div>
+          {loading && <div>Loading...</div>}
+          {error && <div>{error}</div>}
+           </div>
+            <input type="email" className="email" placeholder="email" onChange={(e) => setEmail(e.target.value)}></input>
+            <input type="password" className="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}></input>
 
             <button type='submit' className="signin_button">Sign In</button>
 

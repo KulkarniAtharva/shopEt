@@ -145,6 +145,12 @@ body{
   width: 20rem;
 }
 
+.signinform
+{
+  display: flex;
+  margin: auto;
+}
+
 
 .signin_container
 {
@@ -169,7 +175,8 @@ body{
   text-align: center;
   border-radius: 2rem;
   padding: 2rem;
-  margin-top: 6rem;;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .signintitle
@@ -179,7 +186,7 @@ body{
   font-style: italic;
 }
 
-.username
+.email
 {
   height: 2rem;
   margin-top: 3rem;
