@@ -199,7 +199,7 @@ body{
 .name
 {
   height: 2rem;
-  margin-top: 7rem;
+  margin-top: 4rem;
   border-radius: 2rem;
   padding: 1rem;
   outline: none;
@@ -214,6 +214,14 @@ body{
   padding: 1rem;
   outline: none;
   font-size: medium;
+}
+
+.signinstatus
+{
+  margin-top: 2rem;
+  color: red;
+  font-weight: bold;
+  font-size: small;
 }
 
 .signin_button
@@ -232,7 +240,7 @@ body{
   cursor: pointer;
 }
 
-.signin_button:hover
+.signin_button:enabled:hover
 {
   color: white;
   background-color: #F79E02;
@@ -541,4 +549,19 @@ body{
 {
   margin-top: 2rem;
   text-align: center;
+}
+
+.signupstatus
+{
+  margin-top: 3rem;
+  color: red;
+  font-weight: bold;
+  font-size: small;
+}
+.signupsuccess
+{
+  margin-top: 3rem;
+  color: #F79E02;
+  font-weight: bold;
+  font-size: small;
 }

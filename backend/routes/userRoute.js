@@ -10,18 +10,29 @@ const router = express.Router();
 
 router.post('/signin', async( req, res)=> {
 
-   
-  const salt = await bcrypt.genSalt(saltRounds);
-  var hash = await bcrypt.hash(req.body.password,salt);
-
-   
-
-   bcrypt.compare()
     const signinUser = await User.findOne({
         email: req.body.email,
-        password: hash
     });
-    if(signinUser)
+
+    bcrypt.compare(req.body.password,signinUser.password,function(err, isMatch) {
+      if (err) {
+        throw err
+      } else if (!isMatch) {
+        res.send({ msg:'Invalid email or password'})
+      } else {
+        res.send({
+          _id: signinUser.id,
+          name: signinUser.name,
+          email: signinUser.email,
+          isAdmin: signinUser.isAdmin,
+          token: getToken(signinUser)
+      })
+
+      }
+    })
+
+
+    /*if(signinUser)
     { 
         res.send({
             _id: signinUser.id,
@@ -33,9 +44,9 @@ router.post('/signin', async( req, res)=> {
 
     }
     else{
-        res.status(404).send({ msg:'Invalid email or password.'})
-    }
-})
+        res.status(404).send({ msg:'Invalid email or password.',pass:hash})
+    }*/
+});
 
 router.post("/signup", async(req,res) => {
 
@@ -54,8 +65,6 @@ router.post("/signup", async(req,res) => {
       password:hash
     });
 
-
-  
     const signupUser = await user.save();
     res.send(signupUser);
   

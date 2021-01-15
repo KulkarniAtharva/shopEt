@@ -10,6 +10,8 @@ import SignUpScreen from "./screens/SignUpScreen";
 function App() {
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
+  const userSignup = useSelector((state) => state.userSignup);
+  const { newuserInfo } = userSignup;
   const opensidebar = () => {
     document.querySelector(".sidebar").classList.add("open");
   };
@@ -31,8 +33,9 @@ function App() {
         </a>
         {userInfo ? (
           <Link to="/profile" className='signin'>{userInfo.name}</Link>
-        ) : (
-          <Link to="/signin" className='signin'>Sign In</Link>
+        ) :newuserInfo? (
+          <Link to="/profile" className='signin'>{newuserInfo.name}</Link>):
+          (<Link to="/signin" className='signin'>Sign In</Link>
         )}
       </header>
       <div className="sidebar">

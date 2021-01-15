@@ -33,11 +33,10 @@ function userSignupReducer(state={},action)
         {
             return {loading:true}
 
-
         }
         case USER_SIGNUP_SUCCESS:
             {
-                return {loading:false , success:"Sign Up Successful !" , signupInfo : action.payload};
+                return {loading:false , newuserInfo : action.payload , success:"Sign Up Successful !"};
             }
         case USER_SIGNUP_FAILURE:
             {

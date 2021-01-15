@@ -7,6 +7,10 @@ const signin = (email,password) => async (dispatch) => {
 
     try{
         const {data} = await axios.post("/api/users/signin",{email,password});
+        if(data.msg)
+       {
+           throw {message:data.msg};
+       }
         dispatch({type:USER_SIGNIN_SUCCESS,payload:data});
         Cookie.set('userInfo',JSON.stringify(data));
     }
@@ -17,12 +21,18 @@ const signin = (email,password) => async (dispatch) => {
 }
 
 const signup = (name,email,password) => async (dispatch) => {
+
     dispatch({type:USER_SIGNUP_REQUEST, payload:{name,email,password}});
 
     try{
        const {data} = await axios.post("/api/users/signup" , {name,email,password});
+       if(data.msg)
+       {
+           throw {message:data.msg};
+       }
        dispatch({type:USER_SIGNUP_SUCCESS,payload:data});
-       //Cookie.set('signupInfo',JSON.stringify(data));
+       Cookie.set("newuserInfo",JSON.stringify(data));
+       
     }
     catch(error)
     {

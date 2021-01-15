@@ -7,9 +7,10 @@ import { userSigninReducer, userSignupReducer } from './reducers/userReducer';
 
 const cartItems = Cookie.getJSON("cartItems") || [];
 const userInfo = Cookie.getJSON("userInfo") || null;
-//const signupInfo = Cookie.getJSON("signupInfo") || null;
+const newuserInfo = Cookie.getJSON("newuserInfo") || null;
+
  
-const initialState = {addtocart:{cartItems},userSignin:{userInfo}};
+const initialState = {addtocart:{cartItems},userSignin:{userInfo},userSignup:{newuserInfo}};
 
 const reducer = combineReducers({
     productList: productListReducer,
@@ -19,8 +20,12 @@ const reducer = combineReducers({
     userSignup : userSignupReducer
 });
 
+
+
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose ;
 const store = createStore( reducer , initialState , composeEnhancer(applyMiddleware(thunk)));
 
 export default store;
+
+
 

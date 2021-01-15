@@ -32,18 +32,20 @@ function SignInScreen(props)
         e.preventDefault();
         dispatch(signin(email,password));
     }
+
+    
     return(
         <form onSubmit={submitHandler} className='signinform'>
         <div className="signin_container">
             <div className="signintitle"> SignIn</div>
-            <div>
+            <div className='signinstatus'>
           {loading && <div>Loading...</div>}
           {error && <div>{error}</div>}
            </div>
             <input type="email" className="email" placeholder="email" onChange={(e) => setEmail(e.target.value)}></input>
             <input type="password" className="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}></input>
 
-            <button type='submit' className="signin_button">Sign In</button>
+            <button type='submit' className="signin_button" disabled={!email || !password}>Sign In</button>
 
             <Link to="/signup" className="signuplink">Not a User? SignUp</Link>
 
