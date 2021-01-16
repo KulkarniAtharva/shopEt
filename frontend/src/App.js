@@ -6,7 +6,7 @@ import HomeScreen from "./screens/HomeScreen";
 import ProductScreeen from "./screens/ProductScreen";
 import SignInScreen from "./screens/SignInScreen";
 import SignUpScreen from "./screens/SignUpScreen";
-
+import Cookie from 'js-cookie';
 function App() {
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
@@ -18,7 +18,16 @@ function App() {
   const closesidebar = () => {
     document.querySelector(".sidebar").classList.remove("open");
   };
+  const logoutHandler = () => {
+    
+    if(userInfo)
+    Cookie.remove('userInfo');
+    else
+    Cookie.remove('userInfo');
+    
 
+  }
+  
   return (
     <BrowserRouter>
       <header className="header">
@@ -32,9 +41,29 @@ function App() {
           Cart
         </a>
         {userInfo ? (
-          <Link to="/profile" className='signin'>{userInfo.name}</Link>
+          <div className='profile'>
+            <button className='signin'>{userInfo.name}</button>
+              <div className='profilelinks'>
+                <button className='profilebutton'><Link to="/profile" className='profilelink'>Profile</Link></button>
+                <button className='logoutbutton' onClick={logoutHandler}>Logout</button>
+                
+              </div>
+            
+          </div>
+
+           
+
+          
         ) :newuserInfo? (
-          <Link to="/profile" className='signin'>{newuserInfo.name}</Link>):
+          <div className='profile'>
+          <button className='signin'>{userInfo.name}</button>
+            <div className='profilelinks'>
+              <button className='profilebutton'><Link to="/profile" className='profilelink'>Profile</Link></button>
+              <button className='logoutbutton' onClick={logoutHandler}>Logout</button>
+              
+            </div>
+          
+        </div>):
           (<Link to="/signin" className='signin'>Sign In</Link>
         )}
       </header>

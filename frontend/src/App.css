@@ -50,15 +50,67 @@ body{
 {
   text-decoration: none;
   color: white;
-  margin: 0.5rem;
+  margin: 2.5rem;
   font-size: 1.8rem;
 }
 .signin
 {
   text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
   color: white;
   margin: 0.8rem;
   font-size: 1.8rem;
+  background-color: transparent;
+  outline: none;
+  border-width: 0;
+
+}
+.profile
+{
+  margin-top: 1.1rem;
+  margin-right: 1.5rem;  
+  height: 100%;
+
+}
+.profilelinks
+{
+  display: none;
+  position: absolute;
+  background-color:#6cdaee;
+  margin: 0.8rem;
+  font-size: 1.8rem;
+  padding: 1rem;
+}
+.profile:hover .profilelinks
+{
+  
+  display: block;
+
+
+}
+
+.profilebutton
+{
+  
+  margin: 0.5rem;
+  background-color: transparent;
+  outline: none;
+  border-width: 0;
+}
+.profilelink
+{
+  text-decoration: none;
+  color: white;
+}
+.logoutbutton
+{
+  margin: 0.5rem;
+  background-color: transparent;
+  outline: none;
+  border-width: 0;
+  color: white;
+  cursor: pointer;
 }
 .sidebar{
   position: absolute;
