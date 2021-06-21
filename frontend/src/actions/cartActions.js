@@ -15,7 +15,7 @@ const AddToCart = (productId,qty) => async (dispatch,getState) =>
             numreviews:data.numreviews,
             image:data.image,
             countInStock:data.countInStock,
-            Quantity:qty
+            Quantity:parseInt(qty)
         }
     });
     const {addtocart:{cartItems}}=getState();

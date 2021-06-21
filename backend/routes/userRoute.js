@@ -14,23 +14,32 @@ router.post('/signin', async( req, res)=> {
         email: req.body.email,
     });
 
-    bcrypt.compare(req.body.password,signinUser.password,function(err, isMatch) {
-      if (err) {
-        throw err
-      } else if (!isMatch) {
-        res.send({ msg:'Invalid email or password'})
-      } else {
-        res.send({
-          _id: signinUser.id,
-          name: signinUser.name,
-          email: signinUser.email,
-          isAdmin: signinUser.isAdmin,
-          token: getToken(signinUser)
+    if(signinUser!=null)
+    {
+      bcrypt.compare(req.body.password,signinUser.password,function(err, isMatch) {
+        if (err) {
+          throw err
+        } else if (!isMatch) {
+          res.send({ msg:'Invalid email or password'})
+        } else {
+          res.send({
+            _id: signinUser.id,
+            name: signinUser.name,
+            email: signinUser.email,
+            isAdmin: signinUser.isAdmin,
+            token: getToken(signinUser)
+        })
+  
+        }
       })
+    }
+    else
+    {
+      res.send({ msg:'No User found for this email'})
 
-      }
-    })
+    }
 
+    
 
     /*if(signinUser)
     { 
@@ -79,11 +88,14 @@ router.post("/signup", async(req,res) => {
 });
 
 router.get("/createadmin", async (req, res) => {
+
+  const salt = await bcrypt.genSalt(saltRounds);
+  var hash = await bcrypt.hash('adwait',salt);
     try {
       const user = new User({
         name: 'Adwait',
         email: 'adwaitgondhalekar@gmail.com',
-        password: 'adwait',
+        password: hash,
         isAdmin: true
       });
       const newUser = await user.save();

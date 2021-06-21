@@ -3,7 +3,7 @@ import { useEffect,useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {detailsProduct} from '../actions/ProductActions';
 
-function ProductScreeen(props) {
+function ProductScreen(props) {
   //const product = data.products.find(x => x._id === props.match.params.id);
 
   // 
@@ -42,7 +42,7 @@ function ProductScreeen(props) {
 
       <span className="detail">
         <div className="title">{product.name}</div>
-        <div className="description">This is the description of the product</div>
+        <div className="description">{product.description}</div>
         <div className="rating">{product.rating} Stars</div>
         <div className="numreviews">{product.numreviews} Reviews</div>
         <div className="price">₹ {product.price}</div>
@@ -66,4 +66,4 @@ function ProductScreeen(props) {
   );
 }
 
-export default ProductScreeen;
+export default ProductScreen;
