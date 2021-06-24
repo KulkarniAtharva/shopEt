@@ -1,6 +1,8 @@
 # E-Commerce WebApp
 
-# Getting Started with Create React App
+An E-Commerce Application developed using MERN Stack Technology - MongoDB, ExpressJS, ReactJS, NodeJS
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
